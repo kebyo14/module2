@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+
+        <div class="header__mini">
+            <div class="container">
+                <div class="header__mini-contact">
+                    {% for min in mini %}
+                    <a href="" class="mini_phone">{{ min.name }}</a>
+                    <a href="" class="registration">{{ min.sing }}</a>
+                    {% endfor %}
+                </div>
+                <div class="container">
+                    <div class="header__nav-info">
+                        <div class="logo">
+                            {% for header in headers %}
+                            <a href="" class="logo-img1">{{ header.name }}</a>
+                            {% endfor %}
+                        </div>
+                        <div class="links__info">
+                            <ul>
+                                {% for header in headers %}
+                                <li><a href="">{{ header.text }}</a></li>
+
+                                {% endfor %}
+                            </ul>
+                            {% for img in imgs %}
+                            <a href=""><img src="{{ img.img }}" alt="" class="search"></a>
+                            <!-- <a href=""><img src="{% static 'images/1.png' %}" alt="" class="search"></a> -->
+                            {% endfor %}
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="header__menu">
+            {% for info in infos %}
+            <a href="" class=""><img src="{{ info.img }}" alt=""></a>
+            <p class="text_info"> {{ info.text }}</p>
+            {% endfor %}
+        </div>
+
+
+    </header>
+    <section class="collection">
+        <div class="coll">
+            <div class="collection__img">
+                {% for section in sections %}
+                <img src="{{ section.img }}</" alt="">
+                {% endfor %}    
+
+            </div>
+            <div class="collection__text">
+                {% for section in sections %}
+                <h2 class="collection-title">{{ section.name }}</h2>
+                <p class="aaa">{{ section.text }}</p>
+                <a href="">{{ section.btn }}</a>
+                {% endfor %}    
+                
+            </div>
+        </div>
+      
+    </section>
+</body>
+
+</html>
